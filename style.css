@@ -1,0 +1,293 @@
+:root{
+    --primary-backgroundcolor: #222;
+    --secondary-backgrouncolor: rgb(15, 15, 15);
+    --focus-color: rgb(95, 88, 228);
+    --focus-color-dark: rgb(95, 55, 189);
+    --text-light-color: rgb(224, 222, 222);
+    --warning-color: rgb(177, 2, 110);
+    --disable-color: rgb(92, 92, 92);
+    --box-neo-shadow :0 0 5px 0px, inset 0 0 5px 0px;
+    --inset-box-raduis: 10px;
+}
+
+*{  padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+span{
+  font-size: small;
+  color: var(--disable-color);
+}
+
+body{
+    background-color: var(--primary-backgroundcolor);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one-div,   .message-box {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    background-color: var(--secondary-backgrouncolor);
+    transform-style: preserve-3d;
+    animation: rot 2s infinite ease;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0px, inset 0 0 20px 0px;
+    color: var(--focus-color);
+    transition: 2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    transition: all 1.2s ease-in-out;
+    padding: 24px 0px;
+  }
+
+  .message-box{
+    position: absolute;
+    animation: none;
+    height: auto;
+    width: 300px;
+    color: var(--warning-color);
+    top: 45vh;
+    box-shadow: 0 0 20px 0px, 
+    inset 0 0 20px 0px,
+    2px 2px 2px 1000px rgba(32, 32, 32, 0.658);
+    margin: auto 100px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .message-box p{
+    margin: 0 20px;
+    text-wrap: wrap;
+    text-align: center;
+  }
+
+  
+
+  
+  .active{
+    box-shadow: 0 0 30px 1000px var(--primary-backgroundcolor), 
+    inset 5px 5px 5px 0px rgb(31, 31, 31);
+  }
+  
+  @keyframes rot {
+    0% {
+      transform: rotateX(-15deg) translateY(0px);
+    }
+  
+    50% {
+      transform: rotateX(-15deg) translateY(-10px);
+    }
+  
+    100% {
+      transform: rotateX(-15deg) translateY(0px);
+    }
+  }
+
+#textArea{
+    background-color: rgba(15, 15, 15, 0);
+    width: 80%;
+    height: 70%;
+    border: none;
+    outline: none;
+    color: aliceblue;
+    overflow: hidden;
+    resize: none;
+    font-size: medium;
+    font-weight: 600;
+}
+
+#textArea:hover{
+    border: none;
+}
+
+.CheckBoxKey{
+  display: flex ;
+  gap: 20px;
+}
+
+
+.btn, .btn2 {
+
+    border: none;
+    width: 11rem;
+    height: auto;
+    padding: 6px;
+    border-radius: 3em;
+    justify-content: center;
+    align-items: center;
+    text-align: jsu;
+    gap: 12px;
+    background:var(--primary-backgroundcolor);
+    box-shadow: 0 0 20px 0px, inset 0 0 20px 0px;
+    color: var(--focus-color);
+    margin: 1rem;
+    transition: all 300ms ease-in-out;
+  }
+
+  .btn-warning{
+    color: var(--warning-color);
+  }
+
+
+
+  .btn-activate{
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-deactivate{
+    display: none;
+  }
+
+  .disable-btn, .disable-btn span{
+    color: var(--disable-color);
+  }
+  
+  .sparkle {
+    fill: var(--text-light-color);
+    transition: all 800ms ease;
+  }
+
+  .disable-btn.sparkle {
+    fill: var(--disable-color);
+  }
+
+  .disable-btn.sparkle {
+    fill: var(--disable-color);
+  }
+  
+  .text {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-light-color);
+    font-size: medium;
+  }
+  
+  .btn:not(.disable-btn):hover {
+    background: var(--focus-color);
+    box-shadow: 0px 0px 90px 0px var(--focus-color-dark);
+    transform: translateY(-1px);
+    cursor: pointer;
+  }
+  .btn.btn-warning:hover:hover{
+    background: var(--warning-color);
+    box-shadow: 0px 0px 30px 0px var(--warning-color);
+  }
+
+.btn:not(.disable-btn):hover .text {
+    color: white;
+}
+.btn:not(.disable-btn):hover .sparkle {
+    fill: white;
+    transform: scale(1.1);
+  } 
+
+  footer{
+    color: var(--text-light-color);
+    font-size: x-large;
+  }
+
+
+  .neo-title {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    z-index: 100;
+  }
+  
+  h1 {
+    font-size: 4.2rem;    
+  }
+  
+  /* Flickering animation */
+  @keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px var(--focus-color-dark),
+        0 0 80px var(--focus-color-dark),
+        0 0 90px var(--focus-color-dark),
+        0 0 100px var(--focus-color-dark),
+        0 0 150px var(--focus-color-dark);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.select{
+  background-color: var(--secondary-backgrouncolor);
+  box-shadow: var(--box-neo-shadow);
+  color: var(--focus-color);
+  border-radius: var(--inset-box-raduis);
+  text-align: center;
+  margin: 0px 4px;
+  
+}
+.copyButton{
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  align-items: center;
+}
+.copyButton svg{
+  width: 20px;
+  height: 20px;
+  margin: 4px;
+}
+tool-tip{
+  position: relative;
+  left:40px;
+  bottom: 80%;
+  background-color: #222;
+  padding: 4px 8px;
+  box-shadow: var(--box-neo-shadow);
+  border-radius: var(--inset-box-raduis);
+  color: var(--text-light-color);
+  opacity: 0;
+  transition:  opacity .3s ease;
+}
+
+:has(> tool-tip):hover tool-tip{
+  opacity:.6;
+}
+
+.OpacityOn{
+  opacity: 0;
+}
+
+.OpacityOff{
+  opacity: 1;
+}
